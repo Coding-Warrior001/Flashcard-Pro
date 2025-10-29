@@ -1,44 +1,125 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   color: #fff;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #00000050;
+}
+
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.input-container input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  width: 200px;
+}
+
+.input-container button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#addCard { background: #6a11cb; color: #fff; }
+#shuffleCards { background: #2575fc; color: #fff; }
+
+.input-container button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+#flashcardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.flashcard {
+  background: linear-gradient(145deg, #3e3e5e, #5b5b8f);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.flashcard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+.flashcard span {
+  font-size: 1.1em;
+}
+
+.flashcard span:last-child {
+  font-size: 1.4em;
+}
+
+/* Modal styles */
+#confirmModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
 }
 
-.container {
-  text-align: center;
-  background: #111;
+#modalContent {
+  background: #2c2c44;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 0 20px rgba(255,0,0,0.5);
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-input {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: none;
+#modalContent p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
-button {
+#modalContent button {
   padding: 10px 20px;
-  background: red;
+  margin: 10px;
+  border-radius: 10px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: white;
   font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
-button:hover {
-  background: darkred;
+#modalContent button:hover {
+  transform: scale(1.1);
 }
 
-#videoPreview {
-  margin-top: 20px;
-}
+#confirmDelete { background: #dc3545; color: #fff; }
+#cancelDelete { background: #6c757d; color: #fff; }

@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YouTube Downloader</title>
-<link rel="stylesheet" href="style.css">
+  <title>Flashcards Pro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>YouTube Downloader</h1>
-    <input type="text" id="url" placeholder="Paste YouTube URL here">
-    <select id="format">
-        <option value="mp4">Video (MP4)</option>
-        <option value="mp3">Audio (MP3)</option>
-    </select>
-    <button id="downloadBtn">Download</button>
-    <p id="status"></p>
-</div>
 
-<script src="script.js"></script>
+  <h1>Flashcards Pro</h1>
+
+  <div class="input-container">
+    <input type="text" id="question" placeholder="Enter question">
+    <input type="text" id="answer" placeholder="Enter answer">
+    <button id="addCard">Add Card</button>
+    <button id="shuffleCards">Shuffle</button>
+  </div>
+
+  <div id="flashcardsContainer"></div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmModal">
+    <div id="modalContent">
+      <p>Do you want to delete this flashcard?</p>
+      <button id="cancelDelete">Cancel</button>
+      <button id="confirmDelete">Delete</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
